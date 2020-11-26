@@ -1,0 +1,8 @@
+<p style="color: red">Details:</p>
+<h2> Title: <%= @task.title %> </h2>
+<h3> Details: <%= @task.details %> </h3>
+<h3> Done? <%= @task.completed %> </h3>
+
+<small style="font-size: 10px; color: red">
+  <%= link_to "/home", "/tasks" %>
+</small>

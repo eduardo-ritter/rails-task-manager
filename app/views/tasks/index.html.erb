@@ -1,0 +1,20 @@
+<%# MOSTRAR TODAS AS TAREFAS %>
+<p>My Tasks</p>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%=task.id%>. <%= link_to task.title, task_path(task)%>
+      <small style="font-size: 10px; color: red">
+        <%= link_to "Edit", edit_path(task) %></li>
+        <%= link_to "Delete",
+          task_path(task),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+      </small>
+    </li>
+  <% end %>
+</ul>
+<br>
+<small style="font-size: 10px; color: red">
+  <%= link_to "+ create TASK", task_path('new') %>
+</small>
